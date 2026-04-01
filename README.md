@@ -5,8 +5,8 @@ This is a small quiz game I’m building to strengthen my front‑end developmen
 ## Current Progress
 - HTML structure completed
 - Initial CSS layout added
-- Working on responsive design using @media queries
-- JavaScript functionality coming next
+- Responsive design using @media queries added
+- Working on JavaScript functionality
 
 ## Project Goals
 - Display questions and multiple‑choice answers
