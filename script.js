@@ -4,10 +4,10 @@ const quizScreen = document.getElementById("quiz-screen");
 const resultScreen = document.getElementById("result-screen");
 const startBtn = document.getElementById("start-btn");
 const restartBtn = document.getElementById("restart-btn");
-const questionText = document.getElementById("question-text");
-const answerContainer = document.getElementById("answer-container");
+const questionText = document.getElementById("question");
+const answerContainer = document.getElementById("answers-container");
 const currentQuestionSpan = document.getElementById("current-question");
-const totalQuestionsSpan = document.getElementById("total-questions");
+const totalQuestionsSpan = document.getElementById("total-question");
 const scoreSpan = document.getElementById("score");
 const finalScoreSpan = document.getElementById("final-score");
 const maxScoreSpan = document.getElementById("max-score");
@@ -76,20 +76,23 @@ startBtn.addEventListener("click", startQuiz);
 restartBtn.addEventListener("click", restartQuiz);
 
 function startQuiz() {
+  console.log("startQuiz called");
   //reseting variables
   currentQuestionIndex = 0;
   score = 0;
   scoreSpan.textContent = 0;
 
-  startScreen.classList.remove("active");
-  quizScreen.classList.add("active");
+  startScreen.classList.remove("active-screen");
+  startScreen.classList.add("screen");
+  quizScreen.classList.remove("screen");
+  quizScreen.classList.add("active-screen");
 
   showQuestion();
 }
 
 function showQuestion() {
   //restarting state
-  answerDisabled = false;
+  answersDisabled = false;
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
@@ -117,9 +120,9 @@ function showQuestion() {
 
 function selectAnswer(event) {
   //check optimization to prevent multiple clicks
-  if (answerDisabled) return;
+  if (answersDisabled) return;
 
-  answerDisabled = true;
+  answersDisabled = true;
 
   const selectButton = event.target;
   const isCorrect = selectButton.dataset.correct === "true";
@@ -149,31 +152,35 @@ function selectAnswer(event) {
 }
 
 function showResults() {
-  quizScreen.classList.classList.remove("active");
-  resultsScreen.classList.add("active");
+  quizScreen.classList.remove("active-screen");
+  quizScreen.classList.add("screen");
+  resultScreen.classList.remove("screen");
+  resultScreen.classList.add("active-screen");
 
   finalScoreSpan.textContent = score;
 
   const percentage = (score / quizQuestions.length) * 100;
 
   if (percentage === 100) {
-    resultsMessage.textContent = "Perfect score! You're a real quiz master!";
+    resultMessage.textContent = "Perfect score! You're a real quiz master!";
   } else if (percentage >= 80) {
-    resultsMessage.textContent =
+    resultMessage.textContent =
       "Good job! You have a great knowledge of pop culture!";
   } else if (percentage >= 50) {
-    resultsMessage.textContent =
+    resultMessage.textContent =
       "Not bad! You have some knowledge of pop culture, but there's room for improvement.";
   } else if (percentage >= 20) {
-    resultsMessage.textContent =
+    resultMessage.textContent =
       "You might want to brush up on your pop culture knowledge. Keep trying!";
   } else {
-    resultsMessage.textContent =
+    resultMessage.textContent =
       "Ouch! It looks like you need to learn more about pop culture. Don't give up, keep learning!";
   }
 }
 
 function restartQuiz() {
-  resultScreen.classList.remove("active");
-  startQuiz();
+  resultScreen.classList.remove("active-screen");
+  resultScreen.classList.add("screen");
+  startScreen.classList.remove("screen");
+  startScreen.classList.add("active-screen");
 }
