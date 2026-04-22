@@ -43,10 +43,6 @@ body {
   height: 100%;
 }
 
-#start-screen {
-  /* no special min-height needed */
-}
-
 .answers-container,
 .answer-container {
   display: flex;
