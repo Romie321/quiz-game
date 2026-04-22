@@ -1,22 +1,45 @@
-# Quiz Game (Work in Progress)
+# Quiz Game
 
-This is a small quiz game I’m building to strengthen my front‑end development skills. The goal is to practice structuring a simple app, designing a clean UI, and eventually adding interactive JavaScript logic.
+I built this Quiz Game to practice and strengthen my front-end development skills. The project includes a fully responsive layout, interactive JavaScript logic, score tracking, and a clean UI designed to make the quiz simple and fun to play. Completing this project helped me deepen my understanding of DOM manipulation, event handling, and structuring small web applications.
 
-## Current Progress
-- HTML structure completed
-- Initial CSS layout added
-- Responsive design using @media queries added
-- Working on JavaScript functionality
+# Features
 
-## Project Goals
-- Display questions and multiple‑choice answers
-- Track and display the user’s score
-- Add simple animations or transitions
-- Improve overall UI/UX
-- Explore loading questions from a JSON file
+- Fully responsive layout using CSS and media queries
 
-## How to Run
-Open index.html in your browser.
+- Dynamic question and answer rendering
 
-## Status
-This project is actively being developed. More updates coming soon. 
+- Score tracking and final results screen
+
+- Clean, simple UI for easy gameplay
+
+- Modular JavaScript structure for readability and future expansion
+
+# Technologies Used
+
+- HTML
+
+- CSS
+
+- JavaScript
+
+# How to Play
+
+1. Open index.html in your browser.
+
+2. Click Start Quiz.
+
+3. Select your answers as questions appear.
+
+4. View your final score at the end.
+
+# Project Status
+
+This project is complete, but I may continue improving it with:
+
+- Additional question sets
+
+- Animations or transitions
+
+- A timer mode
+
+- JSON-based question loading
